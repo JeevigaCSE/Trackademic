@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -14,6 +14,7 @@ import {
 export default function Index() {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSignUp = (e: React.FormEvent) => {
     e.preventDefault();
@@ -21,6 +22,7 @@ export default function Index() {
     // Simulate signup
     setTimeout(() => {
       setIsLoading(false);
+      navigate("/dashboard");
     }, 1000);
   };
 
