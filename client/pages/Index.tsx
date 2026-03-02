@@ -58,45 +58,23 @@ export default function Index() {
                   Track Your Academic Growth
                 </h1>
               </div>
-              <p className="text-xl text-foreground/60 leading-relaxed">
-                Stop wondering where you're struggling. Trackademic analyzes your
-                learning behavior across all your platforms, identifies weak areas
-                before they hurt your grades, and guides you to real improvement.
+              <p className="text-xl text-foreground/60">
+                Identify weak areas early, get actionable insights, and improve continuously.
               </p>
 
-              {/* Motivational Insights */}
-              <div className="space-y-3 pt-4">
-                <div className="flex gap-3">
-                  <div className="flex items-start">
-                    <span className="text-accent font-bold text-lg">✓</span>
-                    <span className="text-foreground/70 ml-2">
-                      <strong>Catch problems early</strong> - Don't wait until your grades drop to realize you're struggling
-                    </span>
-                  </div>
+              {/* Quick Benefits */}
+              <div className="flex flex-wrap gap-4 pt-2">
+                <div className="flex items-center gap-2">
+                  <span className="text-accent font-bold">✓</span>
+                  <span className="text-sm font-medium">Catch problems early</span>
                 </div>
-                <div className="flex gap-3">
-                  <div className="flex items-start">
-                    <span className="text-accent font-bold text-lg">✓</span>
-                    <span className="text-foreground/70 ml-2">
-                      <strong>See the real picture</strong> - Get insights across all your academic platforms in one dashboard
-                    </span>
-                  </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-accent font-bold">✓</span>
+                  <span className="text-sm font-medium">Multi-platform insights</span>
                 </div>
-                <div className="flex gap-3">
-                  <div className="flex items-start">
-                    <span className="text-accent font-bold text-lg">✓</span>
-                    <span className="text-foreground/70 ml-2">
-                      <strong>Build better habits</strong> - Practical simulations teach time management, consistency, and engagement
-                    </span>
-                  </div>
-                </div>
-                <div className="flex gap-3">
-                  <div className="flex items-start">
-                    <span className="text-accent font-bold text-lg">✓</span>
-                    <span className="text-foreground/70 ml-2">
-                      <strong>Improve continuously</strong> - Get personalized feedback and actionable next steps, not just marks
-                    </span>
-                  </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-accent font-bold">✓</span>
+                  <span className="text-sm font-medium">Smart simulations</span>
                 </div>
               </div>
             </div>
@@ -178,39 +156,79 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Problem Section */}
-      <section className="py-20 px-6 md:px-12 bg-destructive/5 border-y border-destructive/10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            The Problem Most Students Face
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="space-y-3">
-              <p className="text-4xl font-bold text-destructive">72%</p>
-              <p className="font-semibold">Don't realize they're struggling</p>
-              <p className="text-sm text-foreground/60">
-                Until grades drop significantly
-              </p>
+      {/* Student Impact Statistics Section */}
+      <section className="py-20 px-6 md:px-12 bg-muted/30">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3">
+              Trusted by Students Worldwide
+            </h2>
+            <p className="text-foreground/60">See how Trackademic is making a real difference</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Chart 1: Improvement Rate */}
+            <div className="bg-white rounded-xl border border-border p-6">
+              <h3 className="font-semibold mb-6">Grade Improvement</h3>
+              <div className="space-y-4 mb-6">
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm font-medium">+10-15 points</span>
+                    <span className="text-sm font-bold text-accent">78%</span>
+                  </div>
+                  <div className="w-full bg-muted rounded-full h-2">
+                    <div className="bg-accent h-2 rounded-full" style={{ width: "78%" }} />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm font-medium">+15-20 points</span>
+                    <span className="text-sm font-bold text-primary">64%</span>
+                  </div>
+                  <div className="w-full bg-muted rounded-full h-2">
+                    <div className="bg-primary h-2 rounded-full" style={{ width: "64%" }} />
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-2">
+                    <span className="text-sm font-medium">+20+ points</span>
+                    <span className="text-sm font-bold text-secondary">42%</span>
+                  </div>
+                  <div className="w-full bg-muted rounded-full h-2">
+                    <div className="bg-secondary h-2 rounded-full" style={{ width: "42%" }} />
+                  </div>
+                </div>
+              </div>
+              <p className="text-xs text-foreground/50">Based on 5,000+ students in 8 weeks</p>
             </div>
-            <div className="space-y-3">
-              <p className="text-4xl font-bold text-destructive">85%</p>
-              <p className="font-semibold">Can't identify weak areas</p>
-              <p className="text-sm text-foreground/60">
-                Across different platforms
-              </p>
-            </div>
-            <div className="space-y-3">
-              <p className="text-4xl font-bold text-destructive">90%</p>
-              <p className="font-semibold">Lack actionable feedback</p>
-              <p className="text-sm text-foreground/60">
-                Just see marks, not solutions
-              </p>
+
+            {/* Chart 2: Key Metrics */}
+            <div className="bg-white rounded-xl border border-border p-6">
+              <h3 className="font-semibold mb-6">Student Success Metrics</h3>
+              <div className="space-y-5">
+                <div className="flex items-center justify-between p-4 bg-primary/10 rounded-lg">
+                  <span className="font-medium">Early Problem Detection</span>
+                  <span className="text-xl font-bold text-primary">89%</span>
+                </div>
+                <div className="flex items-center justify-between p-4 bg-secondary/10 rounded-lg">
+                  <span className="font-medium">Consistency Improvement</span>
+                  <span className="text-xl font-bold text-secondary">92%</span>
+                </div>
+                <div className="flex items-center justify-between p-4 bg-accent/10 rounded-lg">
+                  <span className="font-medium">Habit Formation</span>
+                  <span className="text-xl font-bold text-accent">76%</span>
+                </div>
+              </div>
             </div>
           </div>
-          <p className="text-lg text-foreground/60 mt-8">
-            Trackademic solves all of this by giving you real-time insights and
-            practical solutions.
-          </p>
+
+          {/* Student Count */}
+          <div className="mt-12 text-center">
+            <p className="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
+              10,000+
+            </p>
+            <p className="text-foreground/60">Students improved their academics with Trackademic</p>
+          </div>
         </div>
       </section>
 
@@ -361,76 +379,6 @@ export default function Index() {
                 Receive personalized improvement plans based on your performance
                 and learning patterns.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Results & Testimonials Section */}
-      <section className="py-20 px-6 md:px-12">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Real Results, Real Students
-            </h2>
-            <p className="text-lg text-foreground/60">
-              See how students like you are using Trackademic to improve
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Result 1 */}
-            <div className="bg-white rounded-xl border border-border p-6">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <span className="text-xl font-bold text-primary">+18</span>
-                </div>
-                <div>
-                  <p className="font-semibold">Grade Improvement</p>
-                  <p className="text-sm text-foreground/60">In 8 weeks</p>
-                </div>
-              </div>
-              <p className="text-foreground/70">
-                "I didn't know I was weak in time management until Trackademic
-                showed me. Now I submit everything on time!"
-              </p>
-              <p className="text-sm text-foreground/50 mt-4">- Priya S., CS Student</p>
-            </div>
-
-            {/* Result 2 */}
-            <div className="bg-white rounded-xl border border-border p-6">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
-                  <span className="text-xl font-bold text-secondary">95%</span>
-                </div>
-                <div>
-                  <p className="font-semibold">Consistency Rate</p>
-                  <p className="text-sm text-foreground/60">Daily engagement</p>
-                </div>
-              </div>
-              <p className="text-foreground/70">
-                "The simulations are game-changers. I actually enjoy practicing
-                now and can see myself improving."
-              </p>
-              <p className="text-sm text-foreground/50 mt-4">- Rahul M., Engineering</p>
-            </div>
-
-            {/* Result 3 */}
-            <div className="bg-white rounded-xl border border-border p-6">
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
-                  <span className="text-xl font-bold text-accent">Early</span>
-                </div>
-                <div>
-                  <p className="font-semibold">Problem Detection</p>
-                  <p className="text-sm text-foreground/60">Caught issues early</p>
-                </div>
-              </div>
-              <p className="text-foreground/70">
-                "Found out I was struggling in coding before my grades dropped.
-                Made all the difference in my semester!"
-              </p>
-              <p className="text-sm text-foreground/50 mt-4">- Aisha K., Data Science</p>
             </div>
           </div>
         </div>
