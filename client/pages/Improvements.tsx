@@ -5,12 +5,22 @@ import { ArrowLeft, CheckCircle, Clock, Target, Trophy } from "lucide-react";
 const Improvements = () => {
   const simulations = [
     {
+      title: "5-Day Academic Deadline Challenge",
+      description: "Master deadline management by making smart decisions across 5 days",
+      difficulty: "Intermediate",
+      duration: "15 min",
+      status: "recommended",
+      impact: "High",
+      link: "/simulator",
+    },
+    {
       title: "Coding Consistency Challenge",
       description: "Practice daily coding with guided challenges to build consistency",
       difficulty: "Intermediate",
       duration: "30 min/day",
       status: "recommended",
       impact: "High",
+      link: "#",
     },
     {
       title: "Time Management Bootcamp",
@@ -19,6 +29,7 @@ const Improvements = () => {
       duration: "20 min/day",
       status: "recommended",
       impact: "High",
+      link: "#",
     },
     {
       title: "LMS Mastery",
@@ -27,6 +38,7 @@ const Improvements = () => {
       duration: "15 min",
       status: "available",
       impact: "Medium",
+      link: "#",
     },
     {
       title: "Assignment Success Plan",
@@ -35,6 +47,7 @@ const Improvements = () => {
       duration: "45 min",
       status: "available",
       impact: "High",
+      link: "#",
     },
   ];
 
@@ -126,9 +139,17 @@ const Improvements = () => {
                     </div>
                   </div>
 
-                  <Button size="sm" className="w-full bg-accent hover:opacity-90">
-                    Start Simulation
-                  </Button>
+                  {simulation.link !== "#" ? (
+                    <Link to={simulation.link}>
+                      <Button size="sm" className="w-full bg-accent hover:opacity-90">
+                        Start Simulation
+                      </Button>
+                    </Link>
+                  ) : (
+                    <Button size="sm" className="w-full bg-accent hover:opacity-90">
+                      Start Simulation
+                    </Button>
+                  )}
                 </div>
               ))}
           </div>
@@ -165,15 +186,29 @@ const Improvements = () => {
                   </div>
                 </div>
 
-                <Button
-                  size="sm"
-                  variant={simulation.status === "recommended" ? "default" : "outline"}
-                  className="w-full"
-                >
-                  {simulation.status === "recommended"
-                    ? "Start Simulation"
-                    : "Begin"}
-                </Button>
+                {simulation.link !== "#" ? (
+                  <Link to={simulation.link} className="w-full">
+                    <Button
+                      size="sm"
+                      variant={simulation.status === "recommended" ? "default" : "outline"}
+                      className="w-full"
+                    >
+                      {simulation.status === "recommended"
+                        ? "Start Simulation"
+                        : "Begin"}
+                    </Button>
+                  </Link>
+                ) : (
+                  <Button
+                    size="sm"
+                    variant={simulation.status === "recommended" ? "default" : "outline"}
+                    className="w-full"
+                  >
+                    {simulation.status === "recommended"
+                      ? "Start Simulation"
+                      : "Begin"}
+                  </Button>
+                )}
               </div>
             ))}
           </div>

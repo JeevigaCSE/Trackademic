@@ -413,14 +413,15 @@ const Dashboard = () => {
                 <Zap className="w-6 h-6 text-primary" />
               </div>
               <div className="flex-1">
-                <h4 className="font-semibold mb-2">Coding Consistency Challenge</h4>
+                <h4 className="font-semibold mb-2">5-Day Deadline Challenge</h4>
                 <p className="text-sm text-foreground/60 mb-4">
-                  Practice daily coding with our guided challenges to improve your
-                  consistency score.
+                  Learn to manage multiple deadlines and improve your time management with interactive simulations.
                 </p>
-                <Button size="sm" className="bg-primary hover:opacity-90">
-                  Start Simulation
-                </Button>
+                <Link to="/simulator">
+                  <Button size="sm" className="bg-primary hover:opacity-90">
+                    Start Simulation
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -437,9 +438,11 @@ const Dashboard = () => {
                   Learn strategies to manage your time better and avoid late
                   submissions.
                 </p>
-                <Button size="sm" className="bg-secondary hover:opacity-90">
-                  Start Simulation
-                </Button>
+                <Link to="/improvements">
+                  <Button size="sm" className="bg-secondary hover:opacity-90">
+                    View Plans
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
