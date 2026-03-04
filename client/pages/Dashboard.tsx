@@ -478,9 +478,9 @@ const Dashboard = () => {
                           Start Improvement Plan
                         </Button>
                       </Link>
-                      <Link to="/simulator" className="flex-1">
+                      <Link to="/challenge" className="flex-1">
                         <Button size="sm" variant="outline" className="w-full">
-                          Try Simulator
+                          Try Challenge
                         </Button>
                       </Link>
                     </div>
@@ -512,11 +512,11 @@ const Dashboard = () => {
               <div className="flex-1">
                 <h4 className="font-semibold mb-2">5-Day Deadline Challenge</h4>
                 <p className="text-sm text-foreground/60 mb-4">
-                  Learn to manage multiple deadlines and improve your time management with interactive simulations.
+                  A daily task tracker to help you manage multiple deadlines and build better habits.
                 </p>
-                <Link to="/simulator">
+                <Link to="/challenge">
                   <Button size="sm" className="bg-primary hover:opacity-90">
-                    Start Simulation
+                    Start Challenge
                   </Button>
                 </Link>
               </div>

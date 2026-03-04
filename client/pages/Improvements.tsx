@@ -3,19 +3,19 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, CheckCircle, Clock, Target, Trophy, Brain } from "lucide-react";
 
 const Improvements = () => {
-  const simulations = [
+  const challenges = [
     {
       title: "5-Day Academic Deadline Challenge",
-      description: "Master deadline management by making smart decisions across 5 days",
+      description: "Daily task tracker to help you manage deadlines and build better habits",
       difficulty: "Intermediate",
-      duration: "15 min",
+      duration: "5 days",
       status: "recommended",
       impact: "High",
-      link: "/simulator",
+      link: "/challenge",
     },
     {
       title: "Coding Consistency Challenge",
-      description: "Practice daily coding with guided challenges to build consistency",
+      description: "Daily habit tracker for coding practice to build consistency",
       difficulty: "Intermediate",
       duration: "30 min/day",
       status: "recommended",
@@ -24,7 +24,7 @@ const Improvements = () => {
     },
     {
       title: "Time Management Bootcamp",
-      description: "Learn strategies to manage your time and avoid late submissions",
+      description: "Daily task reminders and strategies to manage your time better",
       difficulty: "Beginner",
       duration: "20 min/day",
       status: "recommended",
@@ -33,7 +33,7 @@ const Improvements = () => {
     },
     {
       title: "LMS Mastery",
-      description: "Understand how to efficiently use your LMS for better engagement",
+      description: "Daily engagement reminders for better LMS usage",
       difficulty: "Beginner",
       duration: "15 min",
       status: "available",
@@ -42,7 +42,7 @@ const Improvements = () => {
     },
     {
       title: "Assignment Success Plan",
-      description: "Strategic planning for assignments to maximize your grades",
+      description: "Strategic planning reminders for assignments",
       difficulty: "Intermediate",
       duration: "45 min",
       status: "available",
@@ -101,13 +101,13 @@ const Improvements = () => {
           </p>
         </div>
 
-        {/* Recommended Simulations */}
+        {/* Recommended Challenges */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6">Recommended for You</h2>
+          <h2 className="text-2xl font-bold mb-6">Recommended Challenges for You</h2>
           <div className="grid md:grid-cols-2 gap-6 mb-8">
-            {simulations
-              .filter((s) => s.status === "recommended")
-              .map((simulation, index) => (
+            {challenges
+              .filter((c) => c.status === "recommended")
+              .map((challenge, index) => (
                 <div
                   key={index}
                   className="bg-white rounded-xl border border-border p-6 hover:shadow-md transition-shadow"
@@ -115,10 +115,10 @@ const Improvements = () => {
                   <div className="flex items-start justify-between mb-4">
                     <div>
                       <h3 className="text-lg font-semibold mb-2">
-                        {simulation.title}
+                        {challenge.title}
                       </h3>
                       <p className="text-sm text-foreground/60">
-                        {simulation.description}
+                        {challenge.description}
                       </p>
                     </div>
                     <div className="bg-accent/10 rounded-lg p-2 flex-shrink-0">
@@ -129,25 +129,25 @@ const Improvements = () => {
                   <div className="flex gap-4 mb-6 text-sm">
                     <div className="flex items-center gap-2 text-foreground/60">
                       <Clock className="w-4 h-4" />
-                      {simulation.duration}
+                      {challenge.duration}
                     </div>
                     <div className="flex items-center gap-2 text-foreground/60">
-                      {simulation.difficulty}
+                      {challenge.difficulty}
                     </div>
                     <div className="ml-auto font-medium text-accent">
-                      {simulation.impact} Impact
+                      {challenge.impact} Impact
                     </div>
                   </div>
 
-                  {simulation.link !== "#" ? (
-                    <Link to={simulation.link}>
+                  {challenge.link !== "#" ? (
+                    <Link to={challenge.link}>
                       <Button size="sm" className="w-full bg-accent hover:opacity-90">
-                        Start Simulation
+                        Start Challenge
                       </Button>
                     </Link>
                   ) : (
                     <Button size="sm" className="w-full bg-accent hover:opacity-90">
-                      Start Simulation
+                      Start Challenge
                     </Button>
                   )}
                 </div>
@@ -155,11 +155,11 @@ const Improvements = () => {
           </div>
         </section>
 
-        {/* All Available Simulations */}
+        {/* All Available Challenges */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6">All Simulations</h2>
+          <h2 className="text-2xl font-bold mb-6">All Available Challenges</h2>
           <div className="grid md:grid-cols-2 gap-6">
-            {simulations.map((simulation, index) => (
+            {challenges.map((challenge, index) => (
               <div
                 key={index}
                 className="bg-muted/30 rounded-xl border border-border p-6 hover:border-primary/50 hover:bg-muted/50 transition-all"
@@ -167,10 +167,10 @@ const Improvements = () => {
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-lg font-semibold mb-2">
-                      {simulation.title}
+                      {challenge.title}
                     </h3>
                     <p className="text-sm text-foreground/60">
-                      {simulation.description}
+                      {challenge.description}
                     </p>
                   </div>
                 </div>
@@ -178,34 +178,34 @@ const Improvements = () => {
                 <div className="flex gap-4 mb-6 text-sm">
                   <div className="flex items-center gap-2 text-foreground/60">
                     <Clock className="w-4 h-4" />
-                    {simulation.duration}
+                    {challenge.duration}
                   </div>
-                  <div className="text-foreground/60">{simulation.difficulty}</div>
+                  <div className="text-foreground/60">{challenge.difficulty}</div>
                   <div className="ml-auto font-medium text-primary">
-                    {simulation.impact} Impact
+                    {challenge.impact} Impact
                   </div>
                 </div>
 
-                {simulation.link !== "#" ? (
-                  <Link to={simulation.link} className="w-full">
+                {challenge.link !== "#" ? (
+                  <Link to={challenge.link} className="w-full">
                     <Button
                       size="sm"
-                      variant={simulation.status === "recommended" ? "default" : "outline"}
+                      variant={challenge.status === "recommended" ? "default" : "outline"}
                       className="w-full"
                     >
-                      {simulation.status === "recommended"
-                        ? "Start Simulation"
+                      {challenge.status === "recommended"
+                        ? "Start Challenge"
                         : "Begin"}
                     </Button>
                   </Link>
                 ) : (
                   <Button
                     size="sm"
-                    variant={simulation.status === "recommended" ? "default" : "outline"}
+                    variant={challenge.status === "recommended" ? "default" : "outline"}
                     className="w-full"
                   >
-                    {simulation.status === "recommended"
-                      ? "Start Simulation"
+                    {challenge.status === "recommended"
+                      ? "Start Challenge"
                       : "Begin"}
                   </Button>
                 )}
@@ -214,9 +214,9 @@ const Improvements = () => {
           </div>
         </section>
 
-        {/* Improvement Plan Timeline */}
+        {/* Daily Challenge Timeline */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6">Your Improvement Timeline</h2>
+          <h2 className="text-2xl font-bold mb-6">Your Daily Challenge Timeline</h2>
           <div className="space-y-4">
             {completedPlan.map((week, index) => (
               <div

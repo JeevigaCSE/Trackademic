@@ -10,7 +10,7 @@ import Index from "./pages/Index";
 import Dashboard from "./pages/Dashboard";
 import Connect from "./pages/Connect";
 import Improvements from "./pages/Improvements";
-import Simulator from "./pages/Simulator";
+import Challenge from "./pages/Challenge";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,7 +26,7 @@ const App = () => (
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/improvements" element={<Improvements />} />
-          <Route path="/simulator" element={<Simulator />} />
+          <Route path="/challenge" element={<Challenge />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
