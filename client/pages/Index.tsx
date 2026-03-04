@@ -42,9 +42,11 @@ export default function Index() {
         <div className="min-h-screen flex flex-col items-center justify-center px-6">
           {/* Logo & Brand */}
           <div className="flex items-center gap-3 mb-12">
-            <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-xl">
-              T
-            </div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fc47121dfa07641d88b61cc9044c0ea89%2Fcda88c69c7734ee9a3a05cc337e3102a?format=webp&width=800&height=1200"
+              alt="Trackademic"
+              className="w-12 h-12"
+            />
             <span className="text-3xl font-bold text-foreground">Trackademic</span>
           </div>
 

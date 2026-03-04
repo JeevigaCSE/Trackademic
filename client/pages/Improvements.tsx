@@ -78,9 +78,11 @@ const Improvements = () => {
       <header className="bg-white border-b border-border sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">
-              T
-            </div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2Fc47121dfa07641d88b61cc9044c0ea89%2Fcda88c69c7734ee9a3a05cc337e3102a?format=webp&width=800&height=1200"
+              alt="Trackademic"
+              className="w-10 h-10"
+            />
             <span className="text-xl font-bold text-foreground">Trackademic</span>
           </div>
           <div className="flex items-center gap-4">

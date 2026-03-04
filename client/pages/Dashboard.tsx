@@ -146,9 +146,11 @@ const Dashboard = () => {
               )}
             </button>
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">
-                T
-              </div>
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fc47121dfa07641d88b61cc9044c0ea89%2Fcda88c69c7734ee9a3a05cc337e3102a?format=webp&width=800&height=1200"
+                alt="Trackademic"
+                className="w-10 h-10"
+              />
               <div className="hidden sm:block">
                 <p className="text-lg font-bold text-foreground">Trackademic</p>
                 <p className="text-xs text-primary font-semibold flex items-center gap-1">

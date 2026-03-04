@@ -235,6 +235,15 @@ const Challenge = () => {
         {/* Intro Step */}
         {step === "intro" && (
           <div className="space-y-8">
+            {/* Logo */}
+            <div className="flex justify-center mb-8">
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2Fc47121dfa07641d88b61cc9044c0ea89%2Fcda88c69c7734ee9a3a05cc337e3102a?format=webp&width=800&height=1200"
+                alt="Trackademic"
+                className="w-16 h-16"
+              />
+            </div>
+
             {/* Title Card */}
             <div className="text-center space-y-4">
               <div className="inline-block px-4 py-2 bg-primary/10 rounded-full mb-4">
