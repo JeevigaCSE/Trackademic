@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowLeft, AlertCircle, CheckCircle, TrendingDown, Zap } from "lucide-react";
+import { ArrowRight, ArrowLeft, AlertCircle, CheckCircle, TrendingDown, Zap, Brain } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 
 type SimulatorStep = "intro" | "playing" | "results";
@@ -220,7 +220,13 @@ const Simulator = () => {
               Back
             </Button>
           </Link>
-          <h1 className="text-2xl font-bold text-foreground">5-Day Academic Challenge</h1>
+          <div className="text-center">
+            <h1 className="text-2xl font-bold text-foreground">5-Day Academic Challenge</h1>
+            <p className="text-xs text-primary font-semibold flex items-center justify-center gap-1 mt-1">
+              <Brain className="w-3 h-3" />
+              Powered by Trackademic AI
+            </p>
+          </div>
           <div className="w-24" />
         </div>
       </header>
@@ -394,7 +400,10 @@ const Simulator = () => {
             {/* Insights */}
             {results.insights.length > 0 && (
               <div className="bg-white rounded-xl border border-border p-6 space-y-4">
-                <h3 className="font-bold text-lg text-foreground">Behavior Insights</h3>
+                <h3 className="font-bold text-lg text-foreground flex items-center gap-2">
+                  <Brain className="w-5 h-5 text-primary" />
+                  AI Behavior Analysis
+                </h3>
                 <div className="space-y-2">
                   {results.insights.map((insight, idx) => (
                     <div key={idx} className="flex gap-3 p-3 bg-muted/30 rounded-lg">
@@ -445,8 +454,8 @@ const Simulator = () => {
             {/* Recommendations */}
             <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl border border-primary/30 p-6 space-y-4">
               <h3 className="font-bold text-lg text-foreground flex items-center gap-2">
-                <Zap className="w-5 h-5 text-primary" />
-                Personalized Recommendations
+                <Brain className="w-5 h-5 text-primary" />
+                AI-Powered Personalized Recommendations
               </h3>
               <div className="space-y-3">
                 {results.recommendations.map((rec, idx) => (

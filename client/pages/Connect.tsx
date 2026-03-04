@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Upload, Database, Link as LinkIcon, ArrowRight } from "lucide-react";
+import { Upload, Database, Link as LinkIcon, ArrowRight, Brain } from "lucide-react";
 
 const Connect = () => {
   return (

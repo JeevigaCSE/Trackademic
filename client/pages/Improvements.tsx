@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, CheckCircle, Clock, Target, Trophy } from "lucide-react";
+import { ArrowLeft, CheckCircle, Clock, Target, Trophy, Brain } from "lucide-react";
 
 const Improvements = () => {
   const simulations = [

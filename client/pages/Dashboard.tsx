@@ -24,6 +24,9 @@ import {
   LogOut,
   Menu,
   X,
+  Brain,
+  Lightbulb,
+  ChevronDown,
 } from "lucide-react";
 
 const Dashboard = () => {
@@ -47,20 +50,40 @@ const Dashboard = () => {
       severity: "high",
       description: "Missing coding practice 3-4 days per week",
       impact: -15,
+      aiRecommendations: [
+        "Set a daily coding routine for 45 minutes at the same time each day",
+        "Start with 3-5 easy problems from HackerRank to build momentum",
+        "Use the 5-Day Deadline Challenge simulator to practice deadline management",
+        "Consider pairing with a study buddy for accountability"
+      ]
     },
     {
       name: "Time Management",
       severity: "medium",
       description: "Late submissions on 40% of assignments",
       impact: -12,
+      aiRecommendations: [
+        "Break assignments into smaller milestones with internal deadlines",
+        "Use the Time Management Bootcamp simulation for practical strategies",
+        "Set reminders 3 days before each deadline",
+        "Allocate 80% of work in first 60% of available time"
+      ]
     },
     {
       name: "Attendance Pattern",
       severity: "low",
       description: "Irregular class attendance on Fridays",
       impact: -8,
+      aiRecommendations: [
+        "Mark Friday classes as high-priority in your calendar",
+        "Find an accountability partner for Friday sessions",
+        "Review what you're struggling with on Fridays specifically",
+        "Consider scheduling personal study right after Friday classes"
+      ]
     },
   ];
+
+  const [expandedWeakness, setExpandedWeakness] = useState<number | null>(null);
 
   const performanceTrendData = [
     { week: "Week 1", score: 65 },
@@ -126,9 +149,13 @@ const Dashboard = () => {
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">
                 T
               </div>
-              <span className="text-xl font-bold text-foreground hidden sm:inline">
-                Trackademic
-              </span>
+              <div className="hidden sm:block">
+                <p className="text-lg font-bold text-foreground">Trackademic</p>
+                <p className="text-xs text-primary font-semibold flex items-center gap-1">
+                  <Brain className="w-3 h-3" />
+                  AI-Powered Analytics
+                </p>
+              </div>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -361,10 +388,16 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* Weak Areas */}
+        {/* Weak Areas with AI Recommendations */}
         <div className="bg-white rounded-xl border border-border p-6 mb-8">
           <div className="flex items-center justify-between mb-6">
-            <h3 className="font-semibold text-lg">Areas Needing Attention</h3>
+            <div className="flex items-center gap-3">
+              <Brain className="w-5 h-5 text-primary" />
+              <h3 className="font-semibold text-lg">Areas Needing Attention</h3>
+              <span className="text-xs px-2 py-1 bg-primary/10 text-primary rounded-full font-medium">
+                AI-Powered
+              </span>
+            </div>
             <Link to="/improvements">
               <Button variant="outline" size="sm">
                 View Improvement Plan
@@ -373,34 +406,98 @@ const Dashboard = () => {
           </div>
           <div className="space-y-4">
             {weakAreas.map((area, index) => (
-              <div
-                key={index}
-                className={`p-4 rounded-lg border ${getSeverityColor(area.severity)}`}
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <h4 className="font-semibold">{area.name}</h4>
-                      <span
-                        className={`text-xs px-2 py-1 rounded-full ${getSeverityBadgeColor(
-                          area.severity
-                        )}`}
-                      >
-                        {area.severity.charAt(0).toUpperCase() +
-                          area.severity.slice(1)}
-                      </span>
+              <div key={index}>
+                <div
+                  className={`p-4 rounded-lg border cursor-pointer hover:shadow-sm transition-all ${getSeverityColor(
+                    area.severity
+                  )}`}
+                  onClick={() =>
+                    setExpandedWeakness(
+                      expandedWeakness === index ? null : index
+                    )
+                  }
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <h4 className="font-semibold">{area.name}</h4>
+                        <span
+                          className={`text-xs px-2 py-1 rounded-full ${getSeverityBadgeColor(
+                            area.severity
+                          )}`}
+                        >
+                          {area.severity.charAt(0).toUpperCase() +
+                            area.severity.slice(1)}
+                        </span>
+                      </div>
+                      <p className="text-sm text-foreground/60">
+                        {area.description}
+                      </p>
                     </div>
-                    <p className="text-sm text-foreground/60">{area.description}</p>
-                  </div>
-                  <div className="text-right flex-shrink-0">
-                    <TrendingDown className="w-5 h-5 text-destructive" />
-                    <p className="text-sm font-semibold text-destructive mt-1">
-                      {area.impact}%
-                    </p>
+                    <div className="flex items-start gap-4 flex-shrink-0">
+                      <div className="text-right">
+                        <TrendingDown className="w-5 h-5 text-destructive mx-auto" />
+                        <p className="text-sm font-semibold text-destructive mt-1">
+                          {area.impact}%
+                        </p>
+                      </div>
+                      <ChevronDown
+                        className={`w-5 h-5 text-foreground/50 transition-transform ${
+                          expandedWeakness === index ? "rotate-180" : ""
+                        }`}
+                      />
+                    </div>
                   </div>
                 </div>
+
+                {/* AI Recommendations */}
+                {expandedWeakness === index && (
+                  <div className="mt-3 p-4 bg-primary/5 rounded-lg border border-primary/20 space-y-3 animate-slide-up">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Lightbulb className="w-4 h-4 text-primary" />
+                      <h5 className="font-semibold text-sm text-foreground">
+                        AI Recommendations
+                      </h5>
+                    </div>
+                    <div className="space-y-2">
+                      {area.aiRecommendations.map((rec, idx) => (
+                        <div key={idx} className="flex gap-3 p-3 bg-white rounded">
+                          <span className="text-primary font-bold flex-shrink-0">
+                            {idx + 1}.
+                          </span>
+                          <p className="text-sm text-foreground/70">{rec}</p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="pt-2 flex gap-2">
+                      <Link to="/improvements" className="flex-1">
+                        <Button
+                          size="sm"
+                          className="w-full bg-primary hover:opacity-90"
+                        >
+                          Start Improvement Plan
+                        </Button>
+                      </Link>
+                      <Link to="/simulator" className="flex-1">
+                        <Button size="sm" variant="outline" className="w-full">
+                          Try Simulator
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
+          </div>
+
+          {/* AI Info Card */}
+          <div className="mt-6 p-4 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg border border-primary/20">
+            <p className="text-sm text-foreground/70">
+              <Brain className="w-4 h-4 inline text-primary mr-2" />
+              <strong>Trackademic AI Analysis:</strong> Our intelligent system analyzes
+              your learning patterns across all platforms and provides personalized
+              recommendations to help you improve where it matters most.
+            </p>
           </div>
         </div>
 
