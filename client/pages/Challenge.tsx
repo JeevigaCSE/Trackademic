@@ -238,7 +238,7 @@ const Challenge = () => {
             {/* Logo */}
             <div className="flex justify-center mb-8">
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fc47121dfa07641d88b61cc9044c0ea89%2Fcda88c69c7734ee9a3a05cc337e3102a?format=webp&width=800&height=1200"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fc47121dfa07641d88b61cc9044c0ea89%2F7dc959a701684523be0988282b815c43?format=webp&width=800&height=1200"
                 alt="Trackademic"
                 className="w-16 h-16"
               />

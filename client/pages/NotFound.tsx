@@ -18,9 +18,11 @@ const NotFound = () => {
       <div className="max-w-md w-full px-6 text-center">
         {/* Logo */}
         <div className="flex items-center justify-center gap-2 mb-8">
-          <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-lg">
-            T
-          </div>
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets%2Fc47121dfa07641d88b61cc9044c0ea89%2F7dc959a701684523be0988282b815c43?format=webp&width=800&height=1200"
+            alt="Trackademic"
+            className="w-12 h-12"
+          />
           <span className="text-2xl font-bold text-foreground">Trackademic</span>
         </div>
 
